@@ -22,4 +22,5 @@ variable "subdomain" {
 
 variable "global" {
   type = bool
+  default = false
 }
