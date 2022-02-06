@@ -28,8 +28,3 @@ variable "domain" {
 variable "subdomain" {
   type = string
 }
-
-variable "global" {
-  type = bool
-  default = false
-}
