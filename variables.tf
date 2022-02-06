@@ -27,4 +27,9 @@ variable "domain" {
 
 variable "subdomain" {
   type = string
+  default = ""
+}
+
+locals {
+  domain_name = var.subdomain != "" ? "${var.subdomain}.${var.domain}" : var.domain
 }

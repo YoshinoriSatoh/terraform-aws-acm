@@ -25,7 +25,7 @@ resource "aws_route53_record" "cert_validation" {
 
 resource "aws_route53_record" "cert_caa" {
   allow_overwrite = true
-  name            = "${var.subdomain}.${var.domain}"
+  name            = local.domain_name
   records         = ["0 issue \"amazon.com\""]
   ttl             = 60
   type            = "CAA"
@@ -33,9 +33,9 @@ resource "aws_route53_record" "cert_caa" {
 }
 
 resource "aws_acm_certificate" "certificate" {
-  domain_name = "${var.subdomain}.${var.domain}"
+  domain_name = local.domain_name
   subject_alternative_names = [
-    "*.${var.subdomain}.${var.domain}"
+    "*.${local.domain_name}"
   ]
   validation_method = "DNS"
   lifecycle {
