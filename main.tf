@@ -33,7 +33,7 @@ resource "aws_route53_record" "cert_caa" {
 }
 
 resource "aws_acm_certificate" "certificate" {
-  # provider = var.global ? aws.useast1 : null
+  provider = var.global ? aws.useast1 : aws.useast1
   domain_name = "${var.subdomain}.${var.domain}"
   subject_alternative_names = [
     "*.${var.subdomain}.${var.domain}"
