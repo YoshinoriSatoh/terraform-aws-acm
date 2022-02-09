@@ -8,10 +8,6 @@ variable "tf" {
   })
 }
 
-variable "region" {
-  type    = string
-}
-
 variable "hostedzone_id" {
   type = string
 }
@@ -21,7 +17,7 @@ variable "domain" {
 }
 
 variable "subdomain" {
-  type = string
+  type    = string
   default = ""
 }
 
