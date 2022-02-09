@@ -8,11 +8,6 @@ variable "tf" {
   })
 }
 
-variable "profile" {
-  type    = string
-  default = null
-}
-
 variable "region" {
   type    = string
 }
